@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  console.log(mathOperation(5, 3, "/"));
+
+
+  /** Функция выполняет математические операции +, -, *, /
+    * @param {number} arg1 - любое число
+    * @param {number} arg2 - любое число
+    * @param {string} operation - операция, которую необходимо выполнить
+    * @returns {nummber} - возвращает результат операции или NaN
+  */
+  function mathOperation(arg1, arg2, operation){
+    switch (operation) {
+      case "/": 
+        return getDivide(arg1, arg2);
+      case "-": 
+        return getSubtract(arg1, arg2);
+      case "+": 
+        return getSum(arg1, arg2);
+      case "*": 
+        return getMultiply(arg1, arg2);
+      default: 
+        return NaN;
+    }
+  }
+
+  /** Функция возвращает сумму параметров
+    * @param {number} a - любое число
+    * @param {number} b - любое число
+    * @returns {nummber}
+  */
+  function getSum (a, b) {
+  return a + b;
+  }
+
+  /** Функция выполняет вычитание меньшего числа из большего
+    * @param {number} a - любое число
+    * @param {number} b - любое число
+    * @returns {number} - положительное число
+  */
+  function getSubtract (a, b) {
+    let result;
+    if (a > b) {
+      return a - b;
+    } else {
+      return b - a;
+    }
+  }
+
+  /** Функция производит деление первого числа на второе
+    * @param {number} a - делимое, любое число
+    * @param {number} b - делитель, любое число
+    * @returns {number} - отношение второго числа к первому
+  */
+  function getDivide (a, b) {
+    return a / b;
+  }
+  /** Функция возвращает произведение двух чисел
+    * @param {number} a - любое число
+    * @param {number} b - любое число
+    * @returns {number} - произведение
+  */
+  function getMultiply (a, b) {
+    return a * b;
+  }
+
+</script>
+</body>
+</html>
