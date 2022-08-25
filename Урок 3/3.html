@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя
+метод forEach.
+-->
+<script>
+  "use strict";
+
+  const products = [
+    {
+      id: 3,
+      price: 200,
+    },
+    {
+      id: 4,
+      price: 900,
+    },
+    {
+      id: 1,
+      price: 1000,
+    },
+  ];
+    const productsMinus15p = [];
+    products.forEach(function(product) {
+      productsMinus15p.push({id: product.id, price: product.price * 0.85});
+    });
+    console.log(productsMinus15p);
+
+  // Павел, у меня дилемма. С одной стороны результат одинаков, с другой - моё
+  // решение отличается. Оставлять как есть уже не очень хочется, т.к.
+  // ваше решение более оптимальное. Но и что-то менять тоже кажется 
+  // неправильным, т.к. это же моё решение задачи и если я буду его изменять,
+  // то какой смысл в сдаче работы?
+  //  
+</script>
+</body>
+</html>
